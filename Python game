@@ -1,0 +1,62 @@
+print("Welcome to my First Project!!")
+name = input("What is your name?")
+age = int(input("What is your age?"))
+
+health = 10
+
+
+if age >= 18:
+    print("Hello",name,"you are",age,"years old.")
+    print("You are old enough to go!")
+    
+    wants_to_play = input("Do you want to play? yes or no ").lower()
+    if wants_to_play == "y":
+        print("You are starting with",health,"health")
+        print("Lets play!!")
+        
+        left_or_right = input("First choice.... Left or Right(left/right)?")
+        if left_or_right == "left":
+            ans = input("Nice,you follow the path And reach a lake.... Do you swim across or go around (across/around)?")
+            if ans == "around":
+                print("You went around And reached the other side of the lake.")
+            elif ans == "across":
+                print("You managed to get across,but were bite by a crab and lost 5 health.")
+                health -=5
+            ans = input("You notice a house and a river,which do you choose(river/house)?")
+            if ans == "house":
+                print("You go the house and are greeted by the owner..He doesn't like you & you loose 5 health")
+                health -= 5
+                
+                if health <= 0:
+                    print("Now you have 0 health and you lost the game....")
+                else:
+                    print("You have survived... You win :)")
+                    
+            else :
+                 print("You fell in the river And lost...:(")
+                
+        elif left_or_right == "right":
+            ans = input("Delightful,you have entered world fair...Do you want go for roller_coaster_ride or flash_tower(rcr or ft)")
+            
+            if ans == "rcr":
+                print("hurray!!,the ride was Succesfull you have got 10 more health.")
+                health += 10
+            elif ans == "ft":
+                print("oh shit,seats were full you didn't get a chance to play you lost 5 health")
+                health -= 5
+                
+            ans = input("you have a chance to play Equinox 360 or Wonder splash,which one do you want to play(equinox / ws)?")
+            if ans == "equinox":
+                print("equinox has some technical issue,you cannot go , so you lost 5 health")
+                health -=5
+
+                if health <= 0:
+                    print("Now you have 0 health and you lost the game....")
+                else:
+                    print("You played well... You win :)")
+            else:
+                print("you played wonder splash,& you win")
+    else:
+        print('Cya.....')
+else:
+    print("You are not old enough to play :( but you can have Chocolates :).")   
